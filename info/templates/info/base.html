@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/aleatory.css' %}"/>
+    <title>Title</title>
+</head>
+<body>
+
+<nav><div><p class="fas fa-arrow-left"><a href="index.html">Ver Tabla Completa</a></div>
+
+</nav>
+<aside><a href="BACK.html" class="fas fa-arrow-circle-left back-a"></a></aside>
+<section>
+    <div class="definicion">
+        <button onClick="boton()" class="btn-def"><i class="far fa-hand-point-up"></i> {{def.concepto}}</button>
+    </div>
+    <div class="info" id="def">
+        <p class="sig_en"><b>Siglas en ingles:</b> {{def.sig_en}}</p>
+        <p class="sig_es"><b>Siglas en español: </b>{{def.sig_es}}</p>
+        <p class="capa"><b>Capa:</b> {{def.capa}}</p>
+        <p class="puerto"><b>Puerto:</b> {{def.puerto}}</p>
+        <p class="Definicion"><b>Definición:</b> {{def.description}}</p>
+    </div>
+    <br/>
+    <a href="aleatory.html" onclick="random()" class="fas fa-random"></a>
+</section>
+<aside><a href="NEXT.html" class="fas fa-arrow-circle-right next-a"></a></aside>
+<footer>
+    <br/>
+<div>
+<form class="" method="POST" action="" style="display:none">{% csrf_token %}
+<button id="rand" type="submit"></button>
+</form>
+    <p ALIGN="CENTER">HAZ CLICK SOBRE EL BOTON CENTRAL PARA HACER APARECER LA INFORMACIÓN</p>
+    <p ALIGN="CENTER">HAZ CLICK SOBRE EL BOTON ALEATORIO PARA DESPLEGAR ALEATORIAMENTE</p>
+
+    <div class="movil">
+    <a href="BACK.html" class="fas fa-arrow-circle-left back-a"></a>
+    <a href="NEXT.html" class="fas fa-arrow-circle-right next-a"></a>
+</div>
+    </div>
+</footer>
+<script src="{% static 'js/click.js'%}"></script>
+</body>
+</html>

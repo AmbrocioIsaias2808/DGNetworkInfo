@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link type="text/css" rel="stylesheet" href="{% static 'css/tabla.css' %}"/>
+</head>
+
+<nav>
+    <div style="text-align:right;"><a href="aleatory.html" style="text-decoration:none">Checar aleatoriamente</a> <p class="fas fa-arrow-right"></p></div>
+</nav>
+<section>
+<body>
+    <table>
+        <tr>
+            <th>Concepto</th>
+            <th>Siglas en Español</th>
+            <th>Siglas en Ingles</th>
+            <th>Descripción</th>
+        </tr>
+    {%for info in conceptos%}
+       <tr>
+           <td class="concepto"><p>{{info.concepto}}</p></td>
+            <td class="ingles"><p>{{info.sig_en}}</p></td>
+           <td class="espanol"><p>{{info.sig_es}}</p></td>
+           <td class="des"><p>{{info.description}} <br/><br/> <B>Capa:</B> {{info.capa}}<br/><br/> <B>Puerto:</B> {{info.puerto}}<br/></p></td>
+       </tr>
+    {%endfor%}
+    </table>
+</section>
+</body>
+</html>
